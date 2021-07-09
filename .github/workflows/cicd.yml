@@ -1,0 +1,45 @@
+# Go CI
+
+name: Building, Testing and deploying a module
+
+on: [ push, pull_request ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: 1.16
+
+      - name: Install Dependencies
+        run: |
+          go version
+          go get -u golang.org/x/lint/golint
+
+      - name: Sanity Checks
+        run: |
+          go vet .
+          go lint .
+
+      - name: Test
+        run: go test -v ./...
+  tag:
+    runs-on: ubuntu-latest
+    needs: test
+    if: github.ref == 'refs/heads/develop'
+    steps:
+      - name: Create snapshot
+        uses: actions/github-script@v3
+        with:
+          github-token: ${{ github.token }}
+          script: |
+            github.git.createRef({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              ref: "refs/tags/tagname",
+              sha: context.sha
+            })
