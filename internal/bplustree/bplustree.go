@@ -6,8 +6,8 @@ import (
 )
 
 const (
-	indexFilePath  = "./db/index.db"
-	recordFilePath = "./db/records.db"
+	//indexFilePath  = "./db/index.db"
+	//recordFilePath = "./db/records.db"
 )
 
 // Node is the structure used to represent a BPlusTree node
