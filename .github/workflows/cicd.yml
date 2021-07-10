@@ -31,9 +31,12 @@ jobs:
     steps:
       - name: Create snapshot
         id: snapshotter
-        uses: DevourTech/snapshotter@v1.2.1
+        uses: DevourTech/snapshotter@v1.3.0
         with:
           BASE_VERSION: v0.0.0
+          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_USERNAME: "DevourTech"
+          GITHUB_REPOSITORY: "devourKV"
       - name: Release snapshot
         uses: actions/github-script@v3
         with:
