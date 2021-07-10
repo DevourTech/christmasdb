@@ -31,7 +31,7 @@ jobs:
     steps:
       - name: Create snapshot
         id: snapshotter
-        uses: DevourTech/snapshotter@v1.2.0
+        uses: DevourTech/snapshotter@v1.2.1
         with:
           BASE_VERSION: v0.0.0
       - name: Release snapshot
