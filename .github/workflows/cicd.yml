@@ -30,6 +30,11 @@ jobs:
     if: github.ref == 'refs/heads/develop'
     steps:
       - name: Create snapshot
+        id: snapshotter
+        uses: DevourTech/snapshotter@v1.1
+        with:
+          BASE_VERSION: v0.0.0
+      - name: Release snapshot
         uses: actions/github-script@v3
         with:
           github-token: ${{ github.token }}
@@ -37,6 +42,6 @@ jobs:
             github.git.createRef({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              ref: "refs/tags/tagname",
+              ref: "refs/tags/${{ steps.snapshotter.outputs.SNAPSHOT_VERSION }}",
               sha: context.sha
             })
