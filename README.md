@@ -101,7 +101,7 @@ in some or the other way, you're most welcome.
 
 Contributions are always welcome!
 
-Refer [`CONTRIBUTING.md`](./CONTIRUBUTING.md) for ways to get started.
+Refer [CONTRIBUTING.md](./CONTRIBUTING.md) for ways to get started.
 
 
 ## Authors
