@@ -46,7 +46,7 @@ will be chosen.
 
 | Parameter | Type     | Description                |
 | :-------- | :------- | :------------------------- |
-| `key` | `interface` | **Required**. Unique key associated with the value |
+| `key` | `interface{}` | **Required**. Unique key associated with the value |
 
 <br>
 
@@ -58,8 +58,8 @@ will be chosen.
 
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
-| `key`      | `interface` | **Required**. Key to be inserted into the store |
-| `value`   |   `interface`| **Required**. Value associated with the given key |
+| `key`      | `interface{}` | **Required**. Key to be inserted into the store |
+| `value`   |   `interface{}`| **Required**. Value associated with the given key |
 
 <br>
 
@@ -71,7 +71,7 @@ will be chosen.
 
 | Parameter | Type     | Description                |
 | :-------- | :------- | :------------------------- |
-| `key` | `interface` | **Required**. Unique key associated with the value |
+| `key` | `interface{}` | **Required**. Unique key associated with the value |
 
 ## Installing
 
@@ -92,10 +92,8 @@ import "github.com/DevourTech/devourKV/apis"
 
 ## Important !!
 
-This key-value store is currently under development. The versions which have been released till date are note yet stable.
-So, it isn't recommended for use unless the stable release is rolled out.<br>
-Nevertheless, you can always clone this repository, go through the codebase and if you feel that you can contribute
-in some or the other way, you're most welcome. 
+Consider versions released only on the `master` branch as **stable**. The one's released on develop branch are mere snapshots and they do not guarantee stability. 
+Snapshots are released using a **GitHub action** called [Snapshotter](https://github.com/DevourTech/snapshotter).
 
 ## Contributing
 
