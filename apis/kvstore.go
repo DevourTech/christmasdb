@@ -1,7 +1,7 @@
 package apis
 
 type KVStore interface {
-	Get(key interface{}) (interface{}, error)
-	Store(key interface{}, value interface{}) error
-	Delete(key interface{}) error
+	Get(key string) (interface{}, error)
+	Store(key string, value interface{}) error
+	Delete(key string) error
 }
