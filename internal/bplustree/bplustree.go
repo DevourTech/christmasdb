@@ -1,13 +1,13 @@
 package bplustree
 
 import (
-	"github.com/DevourTech/devourKV/internal/apis"
-	"github.com/DevourTech/devourKV/internal/errors"
+	"github.com/DevourTech/christmasdb/internal/apis"
+	"github.com/DevourTech/christmasdb/internal/errors"
 )
 
 const (
-	//indexFilePath  = "./db/index.db"
-	//recordFilePath = "./db/records.db"
+//indexFilePath  = "./db/index.db"
+//recordFilePath = "./db/records.db"
 )
 
 // Node is the structure used to represent a BPlusTree node
@@ -40,8 +40,8 @@ type BPlusTree struct {
 	t int
 }
 
-// Construct creates a tree either from the file or an entirely new tree
-func Construct(degree int) apis.Tree {
+// New creates a tree either from the file or an entirely new tree
+func New(degree int) apis.Tree {
 	// TODO: Check if an entry exists in the file for the root.
 	r := &Node{
 		keys:     nil,
@@ -59,7 +59,7 @@ func (tree *BPlusTree) Search(key uint64) (interface{}, error) {
 	return tree.search(tree.root, key)
 }
 
-// search searches for key in node x
+// search looks for key in node x
 func (tree *BPlusTree) search(x *Node, key uint64) (interface{}, error) {
 	if !x.leaf {
 		i := 0

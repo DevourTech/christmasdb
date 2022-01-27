@@ -1,4 +1,4 @@
-module github.com/DevourTech/devourKV
+module github.com/DevourTech/christmasdb
 
 go 1.15
 
